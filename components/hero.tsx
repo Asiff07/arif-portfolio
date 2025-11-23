@@ -5,18 +5,18 @@ import Link from "next/link"
 import { ArrowRight, Download } from "lucide-react"
 import Image from "next/image"
 
-export default function Hero() {
-  const roles = [
-    "Full-Stack Developer",
-    "DevOps & Cloud Enthusiast",
-    "Problem Solver",
-    "Backend Engineer",
-    "Frontend Architect",
-    "System Design Learner",
-    "Scalable App Builder",
-    "Passionate Tech Explorer",
-  ]
+const roles = [
+  "Full-Stack Developer",
+  "DevOps & Cloud Enthusiast",
+  "Problem Solver",
+  "Backend Engineer",
+  "Frontend Architect",
+  "System Design Learner",
+  "Scalable App Builder",
+  "Passionate Tech Explorer",
+]
 
+export default function Hero() {
   const [displayedText, setDisplayedText] = useState("")
   const [currentRoleIndex, setCurrentRoleIndex] = useState(0)
   const [isDeleting, setIsDeleting] = useState(false)
@@ -48,7 +48,7 @@ export default function Hero() {
     )
 
     return () => clearTimeout(timer)
-  }, [displayedText, isDeleting, currentRoleIndex, roles])
+  }, [displayedText, isDeleting, currentRoleIndex])
 
   return (
     <section id="hero" className="min-h-screen flex items-center justify-center pt-20 px-4 sm:px-6 lg:px-8">
@@ -59,7 +59,7 @@ export default function Hero() {
             <div className="glass-effect p-4 w-48 h-48 sm:w-64 sm:h-64">
               <div className="aspect-square bg-gradient-to-br from-accent/20 to-secondary/20 rounded-full flex items-center justify-center overflow-hidden">
                 <Image
-                  src="/Arif.png"
+                  src="/Arif.jpg"
                   alt="Profile"
                   width={256}
                   height={256}
@@ -78,7 +78,7 @@ export default function Hero() {
             </div>
 
             <div className="space-y-3">
-              <h1 className="text-3xl sm:text-4xl lg:text-5xl font-bold text-pretty">Hi, I'm Sk Arif Ahmed</h1>
+              <h1 className="text-3xl sm:text-4xl lg:text-5xl font-bold text-pretty">Hi, I&apos;m Sk Arif Ahmed</h1>
               <p className="text-lg sm:text-xl text-accent font-semibold min-h-8">
                 {displayedText}
                 {displayedText.length > 0 && displayedText.length < roles[currentRoleIndex].length && (
@@ -112,7 +112,7 @@ export default function Hero() {
             {/* Social Links */}
             <div className="flex justify-center md:justify-start gap-4 pt-4">
               <a
-                href="https://github.com"
+                href="https://github.com/Arif1258"
                 target="_blank"
                 rel="noopener noreferrer"
                 className="p-3 rounded-lg bg-card/30 border border-border/30 text-[#ffffff] hover:text-white hover:shadow-[0_0_20px_rgba(255,255,255,0.2)] transition-all duration-300"
@@ -123,7 +123,7 @@ export default function Hero() {
                 </svg>
               </a>
               <a
-                href="https://linkedin.com"
+                href="https://www.linkedin.com/in/skarifahmed"
                 target="_blank"
                 rel="noopener noreferrer"
                 className="p-3 rounded-lg bg-card/30 border border-border/30 text-[#0A66C2] hover:text-[#0A66C2] hover:shadow-[0_0_20px_rgba(10,102,194,0.3)] transition-all duration-300"
@@ -134,7 +134,7 @@ export default function Hero() {
                 </svg>
               </a>
               <a
-                href="mailto:contact@example.com"
+                href="mailto:arifahmedma490@gmail.com"
                 className="p-3 rounded-lg bg-card/30 border border-border/30 text-[#EA4335] hover:text-[#EA4335] hover:shadow-[0_0_20px_rgba(234,67,53,0.3)] transition-all duration-300"
                 aria-label="Email"
               >

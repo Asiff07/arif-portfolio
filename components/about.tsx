@@ -17,9 +17,9 @@ export default function About() {
           {/* Section Header */}
           <div className="space-y-4">
             <h2 className="text-3xl sm:text-4xl lg:text-5xl font-bold">
-              About <span className="bg-gradient-to-r from-accent to-secondary bg-clip-text text-transparent">Me</span>
+              About <span className="bg-linear-to-r from-accent to-secondary bg-clip-text text-transparent">Me</span>
             </h2>
-            <div className="w-12 h-1 bg-gradient-to-r from-accent to-secondary rounded-full" />
+            <div className="w-12 h-1 bg-linear-to-r from-accent to-secondary rounded-full" />
           </div>
 
           {/* Content Grid */}
@@ -27,7 +27,7 @@ export default function About() {
             {/* Right Column - About Text */}
             <div className="space-y-6">
               <p className="text-lg text-muted-foreground leading-relaxed">
-                I'm a dedicated full-stack developer with a passion for creating innovative solutions that solve
+                I&apos;m a dedicated full-stack developer with a passion for creating innovative solutions that solve
                 real-world problems. With expertise across the entire development stack, from frontend UI/UX to backend
                 infrastructure and DevOps, I deliver comprehensive solutions that are scalable, maintainable, and
                 performant.
@@ -43,7 +43,7 @@ export default function About() {
               <div className="grid grid-cols-1 gap-3 pt-6">
                 {highlights.map((highlight, index) => (
                   <div key={index} className="flex items-start gap-3">
-                    <CheckCircle size={20} className="text-accent flex-shrink-0 mt-1" />
+                    <CheckCircle size={20} className="text-accent shrink-0 mt-1" />
                     <span className="text-muted-foreground">{highlight}</span>
                   </div>
                 ))}
@@ -55,7 +55,7 @@ export default function About() {
                   href="#contact"
                   className="inline-block px-6 py-2 rounded-lg bg-accent/10 border border-accent/30 text-accent font-semibold hover:bg-accent/20 hover:border-accent/50 transition-all duration-300"
                 >
-                  Let's connect
+                  Let&apos;s connect
                 </a>
               </div>
             </div>
@@ -73,7 +73,7 @@ export default function About() {
                 key={index}
                 className="glass-effect p-6 text-center space-y-2 hover:border-accent/50 transition-all duration-300"
               >
-                <div className="text-2xl sm:text-3xl font-bold bg-gradient-to-r from-accent to-secondary bg-clip-text text-transparent">
+                <div className="text-2xl sm:text-3xl font-bold bg-linear-to-r from-accent to-secondary bg-clip-text text-transparent">
                   {stat.number}
                 </div>
                 <div className="text-sm text-muted-foreground">{stat.label}</div>

@@ -54,9 +54,9 @@ export default function Skills() {
           <div className="space-y-4">
             <h2 className="text-3xl sm:text-4xl lg:text-5xl font-bold">
               Technical{" "}
-              <span className="bg-gradient-to-r from-accent to-secondary bg-clip-text text-transparent">Skills</span>
+              <span className="bg-linear-to-r from-accent to-secondary bg-clip-text text-transparent">Skills</span>
             </h2>
-            <div className="w-12 h-1 bg-gradient-to-r from-accent to-secondary rounded-full" />
+            <div className="w-12 h-1 bg-linear-to-r from-accent to-secondary rounded-full" />
           </div>
 
           {/* Skills Grid */}
@@ -105,7 +105,7 @@ export default function Skills() {
             </div>
 
             <p className="text-muted-foreground leading-relaxed">
-              I'm constantly learning and staying updated with the latest technologies and best practices in web
+              I&apos;m constantly learning and staying updated with the latest technologies and best practices in web
               development and cloud infrastructure. My diverse skill set enables me to tackle complex projects from
               concept to production deployment.
             </p>

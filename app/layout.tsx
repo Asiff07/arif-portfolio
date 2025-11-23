@@ -2,6 +2,7 @@ import type React from "react"
 import type { Metadata } from "next"
 import { Geist, Geist_Mono } from "next/font/google"
 import { Analytics } from "@vercel/analytics/next"
+import { Toaster } from "sonner"
 import "./globals.css"
 
 const geistSans = Geist({ subsets: ["latin"] })
@@ -23,7 +24,7 @@ export const metadata: Metadata = {
     "React",
     "Node.js",
   ],
-  author: "Sk Arif Ahmed",
+  authors: [{ name: "Sk Arif Ahmed" }],
   creator: "Sk Arif Ahmed",
   publisher: "Sk Arif Ahmed",
   generator: "Next.js",
@@ -45,6 +46,9 @@ export const metadata: Metadata = {
     title: "Sk Arif Ahmed | Full Stack Developer",
     description: "Full-Stack Developer specializing in MERN, DevOps, and Cloud technologies",
   },
+}
+
+export const viewport: Metadata = {
   viewport: "width=device-width, initial-scale=1.0",
   colorScheme: "dark light",
 }
@@ -66,21 +70,22 @@ export default function RootLayout({
               name: "Sk Arif Ahmed",
               url: "https://skarif.dev",
               jobTitle: "Full Stack Developer",
-              email: "skarifaahmed@gmail.com",
+              email: "arifahmedma490@gmail.com",
               knowsAbout: ["Full Stack Development", "MERN Stack", "DevOps", "Cloud Computing", "AWS"],
-              sameAs: ["https://github.com", "https://linkedin.com", "https://twitter.com"],
+              sameAs: ["https://github.com/Arif1258", "https://www.linkedin.com/in/skarifahmed"],
             }),
           }}
         />
       </head>
-      <body className={`${geistSans.className} antialiased bg-background text-foreground`}>
+      <body className={`${geistSans.className} antialiased bg-background text-foreground`} suppressHydrationWarning>
         <div className="fixed inset-0 -z-10">
-          <div className="absolute inset-0 bg-gradient-to-br from-background via-background to-background/80" />
+          <div className="absolute inset-0 bg-linear-to-br from-background via-background to-background/80" />
           <div className="absolute top-0 left-0 w-96 h-96 bg-accent/5 rounded-full blur-3xl" />
           <div className="absolute bottom-0 right-0 w-96 h-96 bg-secondary/5 rounded-full blur-3xl" />
         </div>
         {children}
         <Analytics />
+        <Toaster />
       </body>
     </html>
   )

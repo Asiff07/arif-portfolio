@@ -38,7 +38,7 @@ export default function Footer() {
             <h4 className="text-sm font-semibold mb-4 text-foreground">Follow</h4>
             <div className="flex gap-4">
               <a
-                href="https://github.com"
+                href="https://github.com/Arif1258"
                 target="_blank"
                 rel="noopener noreferrer"
                 className="text-gray-400 hover:text-white transition-colors duration-200"
@@ -47,7 +47,7 @@ export default function Footer() {
                 <FaGithub size={24} />
               </a>
               <a
-                href="https://linkedin.com"
+                href="https://www.linkedin.com/in/skarifahmed"
                 target="_blank"
                 rel="noopener noreferrer"
                 className="text-blue-600 hover:text-blue-400 transition-colors duration-200"
@@ -57,7 +57,7 @@ export default function Footer() {
               </a>
               
               <a
-                href="mailto:skarifaahmed@gmail.com"
+                href="mailto:arifahmedma490@gmail.com"
                 className="text-red-500 hover:text-red-400 transition-colors duration-200"
                 aria-label="Email"
               >

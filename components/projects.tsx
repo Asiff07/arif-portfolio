@@ -35,13 +35,13 @@ const projects = [
       "Vercel",
       "Cloudinary",
     ],
-    demo: "#",
-    image: "/ecommerce-application.jpg",
+    demo: "https://buyora-buy.vercel.app",
+    image: "/buyora.png",
   },
   {
     title: "SigmaGPT — Next Gen Multi-Model AI Chat Application",
     description:
-      "Developed an advanced AI chat platform integrating both OpenAI (GPT) and Google Gemini APIs for dynamic, multi-model conversations. Engineered a MERN-stack backend with secure JWT authentication and a React/Vite frontend for a responsive user experience. Features AI-powered image generation via ImageKit and Stripe integration for subscription management.",
+      "Developed an advanced AI chat platform integrating both OpenAI (GPT) and Google (Gemini) APIs for dynamic, multi-model conversations. Engineered a MERN-stack backend with secure JWT authentication and a React/Vite frontend for a responsive user experience. Features AI-powered image generation via ImageKit and Stripe integration for subscription management.",
     tech: [
       "React.js",
       "Vite",
@@ -55,24 +55,32 @@ const projects = [
       "ImageKit",
       "Stripe",
     ],
-    demo: "#",
-    image: "/ai-chat-application.jpg",
+    demo: "https://asif-sigmagpt.vercel.app/",
+    image: "/sigmagpt.png",
+  },
+  {
+    title: "NoteNexus – Premium Study Marketplace",
+    description:
+      "A full-stack academic marketplace designed for students to buy, sell, and share university notes. Built with the MERN stack, it features a modern glassmorphism UI with dark mode support, secure authentication, and integrated payment gateways (Stripe/Razorpay) for monetization. Includes real-time download tracking, wishlist management, and a responsive design that provides a premium user experience across all devices.",
+    tech: ["JavaScript", "React.js", "Node.js", "Express.js", "MongoDB","Mongoose","Tailwind CSS","Gemini API","Stripe","Razorpay","Cloudinary", "JWT","Vite", "Vercel"],
+    demo: "https://note-hive-blue.vercel.app/",
+    image: "/notenexus.png",
   },
   {
     title: "Wanderlust – Hotel Booking Website",
     description:
-      "A comprehensive hotel booking platform built with Node.js and Express, utilizing Passport.js for authentication and session management. Features integrated map functionality for location visualization and deployed on Render for scalability and reliability.",
-    tech: ["Node.js", "Express.js", "MongoDB", "EJS", "Bootstrap", "Passport.js", "Socket.IO", "Render"],
-    demo: "#",
-    image: "/hotel-booking-platform.jpg",
+      "A full-stack hotel booking app built using Node.js, Express.js, MongoDB (Mongoose), EJS, Bootstrap, and MVC architecture. Features include hotel browsing, booking, authentication (Passport.js), flash alerts, sessions, Map Features and method-override for RESTful operations. Deployed on Render, with dotenv for secure environment management.",
+    tech: ["JavaScript", "Node.js", "Express.js", "MongoDB", "EJS", "Bootstrap", "Passport.js", "Render", "MVC Architecture", "JWT"],
+    demo: "https://wanderlust-k5em.onrender.com/listings",
+    image: "/wanderlust.png",
   },
   {
     title: "Apna Video Call – Real-Time Video Conferencing",
     description:
-      "A real-time video conferencing application leveraging Socket.IO for peer-to-peer communication and WebRTC for high-quality video streaming. Built with Node.js and Express backend with a responsive Tailwind CSS frontend.",
-    tech: ["Node.js", "Express.js", "Socket.IO", "WebRTC", "Tailwind CSS", "JavaScript"],
+      "A real-time video conferencing web app built with the MERN stack (MongoDB, Express.js, React.js, Node.js) and Socket.IO for live communication. Includes secure authentication (bcrypt & crypto), instant meeting room creation, real-time chat, and a sleek Material-UI interface. Designed for low-latency, high-quality audio/video calls with a scalable backend architecture.",
+    tech: ["JavaScript","React.js","Node.js", "Express.js", "Mongoose","Socket.IO", "WebRTC", "Tailwind CSS","JWT"],
     demo: "#",
-    image: "/video-conferencing-app.jpg",
+    image: "/zoom1.png",
   },
   {
     title: "Stockyard – Zerodha Clone",
@@ -80,15 +88,15 @@ const projects = [
       "A trading dashboard clone featuring real-time data updates and interactive charts for stock analysis. Built with React on the frontend and Node.js/Express backend with MongoDB for data persistence.",
     tech: ["React.js", "Node.js", "Express.js", "MongoDB", "Chart.js", "Tailwind CSS", "RESTful APIs"],
     demo: "#",
-    image: "/trading-dashboard.jpg",
+    image: "/zerodha.png",
   },
   {
     title: "Krisp – URL Shortener with Analytics",
     description:
       "A URL shortening service with advanced analytics tracking, click monitoring, and QR code generation capabilities. Built with Node.js/Express backend and MongoDB for storing shortened URLs with comprehensive analytics.",
     tech: ["Node.js", "Express.js", "MongoDB", "QR Code", "Analytics", "Tailwind CSS", "RESTful APIs"],
-    demo: "#",
-    image: "/url-shortener-app.jpg",
+    demo: "https://link-shortening-application.onrender.com/",
+    image: "/url.png",
   },
 ]
 
@@ -136,7 +144,7 @@ const techIconMap: Record<string, React.ReactNode> = {
 
 export default function Projects() {
   return (
-    <section id="projects" className="py-20 px-4 sm:px-6 lg:px-8">
+    <section id="projects" className="py-20 px-2 sm:px-4 lg:px-6">
       <div className="max-w-4xl mx-auto">
         <div className="space-y-12">
           {/* Section Header */}
@@ -150,10 +158,10 @@ export default function Projects() {
 
           <div className="space-y-6">
             {projects.map((project, idx) => (
-              <div key={idx} className="glass-effect p-6 hover:border-accent/50 transition-all duration-300 flex gap-6">
+              <div key={idx} className="glass-effect p-4 hover:border-accent/50 transition-all duration-300 flex gap-4 sm:gap-6">
                 {/* Project Image - Left Side */}
                 <div className="flex-shrink-0">
-                  <div className="w-24 h-24 sm:w-32 sm:h-32 rounded-lg overflow-hidden border border-border/50">
+                  <div className="w-32 h-20 sm:w-48 sm:h-28 rounded-lg overflow-hidden border border-border/50">
                     <Image
                       src={project.image || "/placeholder.svg"}
                       alt={project.title}
@@ -169,7 +177,7 @@ export default function Projects() {
                   {/* Title and Description */}
                   <div>
                     <h3 className="text-lg sm:text-xl font-semibold text-foreground mb-2">{project.title}</h3>
-                    <p className="text-sm text-muted-foreground line-clamp-2">{project.description}</p>
+                    <p className="text-sm text-muted-foreground">{project.description}</p>
                   </div>
 
                   {/* Tech Stack with Icons */}

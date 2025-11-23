@@ -2,6 +2,7 @@
 
 import type React from "react"
 import { useState } from "react"
+import { toast } from "sonner"
 import { FaGithub, FaLinkedin, FaXTwitter } from "react-icons/fa6"
 import { Mail, Send } from "lucide-react"
 
@@ -24,11 +25,28 @@ export default function Contact() {
     e.preventDefault()
     setIsSubmitting(true)
 
-    setTimeout(() => {
+    try {
+      const response = await fetch("/api/contact", {
+        method: "POST",
+        headers: {
+          "Content-Type": "application/json",
+        },
+        body: JSON.stringify(formData),
+      })
+
+      const data = await response.json()
+
+      if (response.ok) {
+        toast.success("Message sent! I'll get back to you soon.")
+        setFormData({ name: "", email: "", message: "" })
+      } else {
+        toast.error(data.message || "Oops! There was a problem submitting your form")
+      }
+    } catch (error) {
+      toast.error("Failed to send message. Please try again later.")
+    } finally {
       setIsSubmitting(false)
-      setFormData({ name: "", email: "", message: "" })
-      alert("Message sent! I'll get back to you soon.")
-    }, 1000)
+    }
   }
 
   return (
@@ -97,7 +115,7 @@ export default function Contact() {
             <p className="text-muted-foreground mb-6">Connect with me on social platforms</p>
             <div className="flex justify-center gap-6">
               <a
-                href="https://github.com"
+                href="https://github.com/Arif1258"
                 target="_blank"
                 rel="noopener noreferrer"
                 className="inline-flex items-center gap-2 px-4 py-2 rounded-lg hover:text-white transition-colors duration-200"
@@ -106,7 +124,7 @@ export default function Contact() {
                 <span className="text-sm font-medium">GitHub</span>
               </a>
               <a
-                href="https://linkedin.com"
+                href="https://www.linkedin.com/in/skarifahmed"
                 target="_blank"
                 rel="noopener noreferrer"
                 className="inline-flex items-center gap-2 px-4 py-2 rounded-lg hover:text-white transition-colors duration-200"
@@ -115,27 +133,21 @@ export default function Contact() {
                 <span className="text-sm font-medium">LinkedIn</span>
               </a>
               <a
-                href="mailto:skarifahmedma490@gmail.com"
+                href="mailto:arifahmedma490@gmail.com"
                 className="inline-flex items-center gap-2 px-4 py-2 rounded-lg hover:text-white transition-colors duration-200"
               >
                 <Mail size={24} className="text-red-500 hover:drop-shadow-[0_0_8px_rgba(239,68,68,0.6)]" />
                 <span className="text-sm font-medium">Email</span>
               </a>
-              <a
-                href="https://twitter.com"
-                target="_blank"
-                rel="noopener noreferrer"
-                className="inline-flex items-center gap-2 px-4 py-2 rounded-lg hover:text-white transition-colors duration-200"
-              >
-              </a>
+              {/* Twitter link removed as per user request (no link provided) */}
             </div>
           </div>
 
           <div className="pt-6 border-t border-border/20">
             <p className="text-muted-foreground">
               Email:{" "}
-              <a href="mailto:skarifahmedma490@gmail.com" className="text-accent font-medium hover:underline">
-                skarifahmedma490@gmail.com
+              <a href="mailto:arifahmedma490@gmail.com" className="text-accent font-medium hover:underline">
+                arifahmedma490@gmail.com
               </a>
             </p>
           </div>
