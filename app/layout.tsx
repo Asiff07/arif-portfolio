@@ -9,42 +9,70 @@ const geistSans = Geist({ subsets: ["latin"] })
 const geistMono = Geist_Mono({ subsets: ["latin"] })
 
 export const metadata: Metadata = {
-  title: "Sk Arif Ahmed | Full Stack Developer | MERN | DevOps | Cloud Enthusiast",
+  metadataBase: new URL("https://skarif.dev"),
+  title: {
+    default: "Sk Arif Ahmed | Full Stack Developer & DevOps Engineer",
+    template: "%s | Sk Arif Ahmed",
+  },
   description:
-    "Portfolio of Sk Arif Ahmed – Full-Stack Developer specializing in MERN stack, DevOps, and Cloud technologies. Explore projects in e-commerce, AI, video conferencing, and more.",
+    "Portfolio of Sk Arif Ahmed – Full-Stack Developer specializing in MERN stack, DevOps, and Cloud technologies. Building scalable web applications and cloud infrastructure.",
   keywords: [
     "Sk Arif Ahmed",
+    "Arif Ahmed",
     "Full Stack Developer",
-    "MERN",
-    "DevOps",
-    "AWS",
-    "Cloud",
-    "Portfolio",
-    "Next.js",
-    "React",
+    "MERN Stack Developer",
+    "DevOps Engineer",
+    "Software Engineer",
+    "Web Developer",
+    "React Developer",
+    "Next.js Developer",
     "Node.js",
+    "AWS",
+    "Docker",
+    "Kubernetes",
+    "Portfolio",
   ],
-  authors: [{ name: "Sk Arif Ahmed" }],
+  authors: [{ name: "Sk Arif Ahmed", url: "https://skarif.dev" }],
   creator: "Sk Arif Ahmed",
   publisher: "Sk Arif Ahmed",
-  generator: "Next.js",
-  applicationName: "Sk Arif Ahmed Portfolio",
-  referrer: "origin-when-cross-origin",
-  robots: "index, follow, max-image-preview:large, max-snippet:-1, max-video-preview:-1",
-  icons: {
-    icon: "/favicon.ico",
+  formatDetection: {
+    email: false,
+    address: false,
+    telephone: false,
   },
   openGraph: {
-    title: "Sk Arif Ahmed | Full Stack Developer",
-    description: "Explore my full-stack development projects, DevOps expertise, and cloud solutions",
-    type: "website",
-    locale: "en_US",
+    title: "Sk Arif Ahmed | Full Stack Developer & DevOps Engineer",
+    description: "Explore my full-stack development projects, DevOps expertise, and cloud solutions.",
+    url: "https://skarif.dev",
     siteName: "Sk Arif Ahmed Portfolio",
+    locale: "en_US",
+    type: "website",
+    images: [
+      {
+        url: "/og-image.png", // Assuming an OG image exists or will be added
+        width: 1200,
+        height: 630,
+        alt: "Sk Arif Ahmed Portfolio",
+      },
+    ],
   },
   twitter: {
     card: "summary_large_image",
-    title: "Sk Arif Ahmed | Full Stack Developer",
-    description: "Full-Stack Developer specializing in MERN, DevOps, and Cloud technologies",
+    title: "Sk Arif Ahmed | Full Stack Developer & DevOps Engineer",
+    description: "Full-Stack Developer specializing in MERN, DevOps, and Cloud technologies.",
+    creator: "@skasif_ahmed1", // Assuming this is the handle based on previous context, or generic
+    images: ["/og-image.png"],
+  },
+  robots: {
+    index: true,
+    follow: true,
+    googleBot: {
+      index: true,
+      follow: true,
+      "max-video-preview": -1,
+      "max-image-preview": "large",
+      "max-snippet": -1,
+    },
   },
 }
 
